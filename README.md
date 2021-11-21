@@ -2,24 +2,16 @@
 
 **Note:** This project is under construction and not ready for use.
 
-Simple server used to processing events posted by [Github Web-hooks].
-
-This tool is developed in Ruby with the light-weight [Sinatra] framework.
-
-Testing is facilitated with RSpec / [RSpec-Sinatra]
+[Sinatra] application used to processing events posted by [Github Web-hooks].
 
 [Sinatra]: http://sinatrarb.com/documentation.html
-[RSpec-Sinatra]: https://github.com/tansaku/rspec-sinatra
 
 ## Configuration
 
-Dependencies and all configuration is done in `environment.rb`.
-
-Add your controller actions in `application.rb`.
-Models go in the `lib` directory and are auto-loaded.
-
-Environment variables that you want to expose to your application can be added
-in `.env`
+- Dependencies / configuration in `environment.rb`
+- Controller in `application.rb`
+- Models auto-loaded from `lib` directory
+- Environment variables defined in `.env`
 
 ## Testing
 
@@ -46,14 +38,20 @@ Use `rake console` to open IRB with the environment loaded.
 
 ## Resources
 
-* [sinatra-template] provides example Sinatra app with Rspec tests
-* [Github Web-hooks]
-* [A Simple Sinatra App to Receive Github Webhook Payload]
-* [How to use Bundler with Ruby]
-* [Sinatra Applications with Rspec]
-* [Rack Request]
-* [PipeDream] - HTTP request capture
-* [Sinatra Logging]
+- Github
+  - [Github Web-hooks]
+- Ruby / Rack
+  - [How to use Bundler with Ruby]
+  - [Rack Request]
+- Sinatra
+  - [Sinatra Configuration]
+  - [Sinatra Logging]
+  - [Sinatra Applications with Rspec]
+  - [A Simple Sinatra App to Receive Github Webhook Payload]
+  - [sinatra-template] provides example Sinatra app with Rspec tests
+  - [Sinatra App with Rspec]
+- Misc
+  - [PipeDream] - HTTP request capture
 
 [sinatra-template]: https://github.com/zapnap/sinatra-template
 [Github Web-hooks]: https://docs.github.com/en/developers/webhooks-and-events/webhooks
@@ -63,3 +61,5 @@ Use `rake console` to open IRB with the environment loaded.
 [Rack Request]: https://rubydoc.info/github/rack/rack/master/Rack/Request
 [PipeDream]: https://pipedream.com/
 [Sinatra Logging]: https://spin.atomicobject.com/2013/11/12/production-logging-sinatra/
+[Sinatra Configuration]: http://sinatrarb.com/configuration.html
+[Sinatra App with Rspec]: https://shiroyasha.io/sinatra-app-with-rspec.html
