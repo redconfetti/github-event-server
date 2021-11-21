@@ -7,10 +7,12 @@ describe 'main application' do
     Sinatra::Application.new
   end
 
-  it 'shows the default index page' do
-    get '/'
-    expect(last_response).to be_ok
+  describe 'GET /' do
+    it 'returns HTTP POST expected error' do
+      get '/'
+      expect(last_response.status).to eq 405
+      body = JSON.parse(last_response.body)
+      expect(body['error']).to eq 'HTTP POST request expected'
+    end
   end
-
-  it 'should have more specs'
 end

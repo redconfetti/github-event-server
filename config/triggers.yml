@@ -1,0 +1,5 @@
+---
+-
+  repository_full_name: redconfetti/com.redconfetti
+  branch: gatsby
+  processor: SiteBuilder

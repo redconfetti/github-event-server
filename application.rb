@@ -5,19 +5,15 @@ require 'logger'
 require File.join(File.dirname(__FILE__), 'environment')
 
 ::Logger.class_eval { alias :write :'<<' }
-# access_log = ::File.join(::File.dirname(::File.expand_path(__FILE__)),'.','log','access.log')
-# access_logger = ::Logger.new(access_log)
 error_logger = ::File.new(::File.join(::File.dirname(::File.expand_path(__FILE__)),'.','log','error.log'),"a+")
 error_logger.sync = true
 
-configure do
-  # Logging
-  enable :logging
+before do
+  env["rack.errors"] = error_logger
+end
 
-  log_path = ::File.join(::File.dirname(::File.expand_path(__FILE__)),'.','log','access.log')
-  file = File.new(log_path, 'a+')
-  file.sync = true
-  use Rack::CommonLogger, file
+configure do
+  enable :logging
 end
 
 configure :development do
@@ -36,8 +32,6 @@ configure :production, :development do
   set :show_exceptions, :after_handler
 end
 
-before { env["rack.errors"] = error_logger }
-
 helpers do
   # add your helpers here
 end
@@ -48,7 +42,6 @@ get '/' do
   halt(405, { error: 'HTTP POST request expected'}.to_json)
 end
 
-# root page
 post '/' do
 
   event = request.env['HTTP_X_GITHUB_EVENT']
@@ -67,16 +60,10 @@ post '/' do
       puts "Received '#{event}' type event, which is not currently supported"
   end
 
-  # puts request.inspect
-  # puts "request_method: #{request.request_method.inspect}"
-  # puts "params: #{request.params.inspect}"
-  # logger.info "loading data"
-  # @profiles = Profile.all
   # content_type 'application/json'
   # {
   #   success: 'ok'
   # }.to_json
-  # erb :root
 end
 
 def verify_signature(payload_body)
