@@ -1,5 +1,7 @@
 # Github Event Server
 
+**Note:** This project is under construction and not ready for use.
+
 Simple server used to processing events posted by [Github Web-hooks].
 
 This tool is developed in Ruby with the light-weight [Sinatra] framework.
@@ -8,6 +10,39 @@ Testing is facilitated with RSpec / [RSpec-Sinatra]
 
 [Sinatra]: http://sinatrarb.com/documentation.html
 [RSpec-Sinatra]: https://github.com/tansaku/rspec-sinatra
+
+## Configuration
+
+Dependencies and all configuration is done in `environment.rb`.
+
+Add your controller actions in `application.rb`.
+Models go in the `lib` directory and are auto-loaded.
+
+Environment variables that you want to expose to your application can be added
+in `.env`
+
+## Testing
+
+```bash
+# via rake
+rake spec
+
+# standalone
+rspec
+```
+
+## Getting Started
+
+You can run the Sinatra app using `rackup` or run it using Foreman:
+
+```bash
+bundle install
+bundle exec foreman start
+```
+
+## Console
+
+Use `rake console` to open IRB with the environment loaded.
 
 ## Resources
 
@@ -28,33 +63,3 @@ Testing is facilitated with RSpec / [RSpec-Sinatra]
 [Rack Request]: https://rubydoc.info/github/rack/rack/master/Rack/Request
 [PipeDream]: https://pipedream.com/
 [Sinatra Logging]: https://spin.atomicobject.com/2013/11/12/production-logging-sinatra/
-
-## Configuration
-
-Dependencies and all configuration is done in <tt>environment.rb</tt>.
-
-Add your controller actions in <tt>application.rb</tt>.
-Models go in the <tt>lib</tt> directory and are auto-loaded.
-
-Environment variables that you want to expose to your application can be added
-in <tt>.env</tt>
-
-## Testing
-
-Add your specs in <tt>spec</tt>; just require <tt>spec_helper.rb</tt> to
-pre-configure the test environment. A number of samples are provided (including
-a sample model, which can be removed). To run the specs:
-
-    bundle exec rake spec
-
-## Getting Started
-
-    bundle install
-    bundle exec foreman start
-
-## Extras
-
-We've included a handy <tt>console</tt> script that fires up irb with your
-environment loaded. To load it, use the Rake task:
-
-    bundle exec rake console
