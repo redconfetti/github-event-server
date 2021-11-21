@@ -5,5 +5,6 @@ gem "sinatra"
 
 group :test do
   gem "rspec"
+  gem "rspec-sinatra"
   gem "rack-test"
 end

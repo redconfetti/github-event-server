@@ -1,9 +1,8 @@
-class EventApi < Sinatra::Base
+require 'sinatra'
 
-end
+# class EventApi < Sinatra::Base
 
-
-
+# end
 
 set :port, 5000
 
