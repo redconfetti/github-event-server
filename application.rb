@@ -4,14 +4,6 @@ require 'sinatra'
 require 'logger'
 require File.join(File.dirname(__FILE__), 'environment')
 
-::Logger.class_eval { alias :write :'<<' }
-error_logger = ::File.new(::File.join(::File.dirname(::File.expand_path(__FILE__)),'.','log','error.log'),"a+")
-error_logger.sync = true
-
-before do
-  env["rack.errors"] = error_logger
-end
-
 configure do
   enable :logging
 end
