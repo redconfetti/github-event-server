@@ -8,6 +8,9 @@ gem 'rake'
 
 group :development do
   gem 'foreman'
+
+  # https://github.com/capistrano/capistrano
+  gem "capistrano", "~> 3.16.0", require: false
 end
 
 group :test do

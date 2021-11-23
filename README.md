@@ -65,3 +65,16 @@ Use `rake console` to open IRB with the environment loaded.
 [Sinatra Logging]: https://spin.atomicobject.com/2013/11/12/production-logging-sinatra/
 [Sinatra Configuration]: http://sinatrarb.com/configuration.html
 [Sinatra App with Rspec]: https://shiroyasha.io/sinatra-app-with-rspec.html
+
+## Deployment
+
+This application to deployed to production using [Capistrano], with
+primary configuration in `config/deploy.rb`.
+
+
+```shell
+# View Capistrano tasks
+bundle exec cap -T
+```
+
+[Capistrano]: https://github.com/capistrano/capistrano/blob/master/README.md
