@@ -13,8 +13,16 @@ class Github::Event
     data['before']
   end
 
+  def description
+    data['description']
+  end
+
   def forced
     data['forced']
+  end
+
+  def html_url
+    data['html_url']
   end
 
   def ref

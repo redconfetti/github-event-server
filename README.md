@@ -40,6 +40,7 @@ Use `rake console` to open IRB with the environment loaded.
 
 - Github
   - [Github Web-hooks]
+  - [Github Event Types]
 - Ruby / Rack
   - [How to use Bundler with Ruby]
   - [Rack Request]
@@ -55,6 +56,7 @@ Use `rake console` to open IRB with the environment loaded.
 
 [sinatra-template]: https://github.com/zapnap/sinatra-template
 [Github Web-hooks]: https://docs.github.com/en/developers/webhooks-and-events/webhooks
+[Github Event Types]: https://docs.github.com/en/developers/webhooks-and-events/events/github-event-types#pushevent
 [A Simple Sinatra App to Receive Github Webhook Payload]: https://blog.arangamani.net/blog/2014/04/16/a-simple-sinatra-app-to-receive-github-webhook-payload/
 [How to use Bundler with Ruby]: https://bundler.io/v2.2/guides/bundler_setup.html
 [Sinatra Applications with Rspec]: http://www.shiroyasha.io/sinatra-app-with-rspec.html
