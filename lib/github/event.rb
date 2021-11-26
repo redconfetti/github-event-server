@@ -1,4 +1,6 @@
 class Github::Event
+  TYPES_SUPPORTED = ['push']
+
   attr_reader :data
 
   def initialize(data)
@@ -15,6 +17,10 @@ class Github::Event
 
   def description
     data['description']
+  end
+
+  def branch
+    ref.gsub('refs/heads/', '')
   end
 
   def forced
