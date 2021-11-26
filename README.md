@@ -68,6 +68,9 @@ primary configuration in `config/deploy.rb`.
 ```shell
 # View Capistrano tasks
 bundle exec cap -T
+
+# Deploy update to production
+bundle exec cap production deploy
 ```
 
 [Capistrano]: https://github.com/capistrano/capistrano/blob/master/README.md
