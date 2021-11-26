@@ -4,6 +4,10 @@
 
 [Sinatra] application used to processing events posted by [Github Web-hooks].
 
+Built for specific purpose of receiving 'push' events from Github, and
+then running a static site build process on the same server, likely via a
+shell script with SUID execution bit.
+
 [Sinatra]: http://sinatrarb.com/documentation.html
 
 ## Configuration
