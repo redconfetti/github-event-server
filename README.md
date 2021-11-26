@@ -15,13 +15,7 @@
 
 ## Testing
 
-```bash
-# via rake
-rake spec
-
-# standalone
-rspec
-```
+See [Testing](docs/testing.md)
 
 ## Getting Started
 
@@ -70,7 +64,6 @@ Use `rake console` to open IRB with the environment loaded.
 
 This application to deployed to production using [Capistrano], with
 primary configuration in `config/deploy.rb`.
-
 
 ```shell
 # View Capistrano tasks

@@ -14,7 +14,13 @@ group :development do
 end
 
 group :test do
+
+  # https://github.com/rspec/rspec-core
   gem 'rspec', :require => 'spec'
+
+  # https://github.com/rack/rack-test
   gem 'rack-test'
-  # gem 'rspec-sinatra'
+
+  # https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md#rspec
+  gem 'factory_bot'
 end

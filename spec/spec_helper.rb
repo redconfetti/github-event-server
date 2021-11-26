@@ -14,6 +14,8 @@ Sinatra::Base.set :logging, false
 require File.join(File.dirname(__FILE__), '../application')
 
 RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
+
   # reset database before each example is run
   # config.before(:each) { DataMapper.auto_migrate! }
 end
