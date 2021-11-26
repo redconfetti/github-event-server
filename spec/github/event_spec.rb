@@ -75,7 +75,7 @@ describe Github::Event do
       'open_issues_count' => 0,
     }
   end
-  subject { described_class.new(github_event_data) }
+  subject { build(:github_event) }
 
   describe '#before' do
     it 'returns before sha string' do

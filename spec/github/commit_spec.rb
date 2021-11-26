@@ -1,30 +1,7 @@
 require "#{File.dirname(__FILE__)}/../spec_helper"
 
 describe Github::Commit do
-  let(:github_commit_data) do
-    {
-      'id' => '2aaf96d6ca99f9a91f6a8158b034cc3ed3a12aae',
-      'tree_id' => 'a703d7f846433902b3c6ff1ecbd0f50f4480c39b',
-      'distinct' => true,
-      'message' => 'Misc Gatsby README update',
-      'timestamp' => '2021-04-26T07:20:53-06:00',
-      'url' => 'https://github.com/redconfetti/com.redconfetti/commit/2aaf96d6ca99f9a91f6a8158b034cc3ed3a12aae',
-      'author' => {
-        'name' => 'Jason Miller',
-        'email' => 'jason@redconfetti.com',
-        'username' => 'redconfetti'
-      },
-      'committer' => {
-        'name' => 'Jason Miller',
-        'email' => 'jason@redconfetti.com',
-        'username' => 'redconfetti'
-      },
-      'added' => [],
-      'removed' => [],
-      'modified' => ['GATSBY-README.md', 'build-server/main.rb']
-    }
-  end
-  subject { described_class.new(github_commit_data) }
+  subject { build(:github_commit) }
 
   describe '#id' do
     it 'returns id string' do

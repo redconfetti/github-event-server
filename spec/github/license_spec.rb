@@ -1,16 +1,7 @@
 require "#{File.dirname(__FILE__)}/../spec_helper"
 
 describe Github::License do
-  let(:github_license_data) do
-    {
-      'key' => 'mit',
-      'name' => 'MIT License',
-      'spdx_id' => 'MIT',
-      'url' => 'https://api.github.com/licenses/mit',
-      'node_id' => 'MDc6TGljZW5zZTEz'
-    }
-  end
-  subject { described_class.new(github_license_data) }
+  subject { build(:github_license) }
 
   describe '#key' do
     it 'returns key string' do

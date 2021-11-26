@@ -1,26 +1,7 @@
 require "#{File.dirname(__FILE__)}/../spec_helper"
 
 describe Github::Repository do
-  let(:github_repository_data) do
-    {
-      'name' => 'docs',
-      'full_name' => 'github/docs',
-      'html_url' => 'https://github.com/github/docs',
-      'description' => 'Documentation',
-      'fork' => false,
-      'url' => 'https://github.com/github/docs',
-      'created_at' => 1494606064,
-      'updated_at' => '2021-04-26T05:22:00Z',
-      'pushed_at' => 1619443258,
-      'git_url' => 'git://github.com/github/docs.git',
-      'ssh_url' => 'git@github.com:github/docs.git',
-      'clone_url' => 'https://github.com/github/docs.git.git',
-      'svn_url' => 'https://github.com/github/docs',
-      'default_branch' => 'main',
-      'master_branch' => 'main'
-    }
-  end
-  subject { described_class.new(github_repository_data) }
+  subject { build(:github_repository) }
 
   describe '#name' do
     it 'returns name string' do

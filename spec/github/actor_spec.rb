@@ -1,14 +1,7 @@
 require "#{File.dirname(__FILE__)}/../spec_helper"
 
 describe Github::Actor do
-  let(:github_actor_data) do
-    {
-      'name' => 'John Smith',
-      'email' => 'johnsmith@example.com',
-      'username' => 'johnsmith'
-    }
-  end
-  subject { described_class.new(github_actor_data) }
+  subject { build(:github_actor) }
 
   describe '#name' do
     it 'returns name string' do
